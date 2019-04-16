@@ -44,7 +44,8 @@ out.println(result);
 					var end = res.substring(eIdx);
 					res = start + '<%=result%>' + end;
 					
-					document.getElementById('result').innerHTML = res;
+					document.getElementById('result').innerHTML = 
+						"<a href=" + res + ">¥Á√∑»Æ¿Œ</a>";
 				}
 			};
 			qrcode.decode(reader.result);
