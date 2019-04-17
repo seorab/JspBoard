@@ -12,6 +12,7 @@
 <script>
 	function move() {
 		$.ajax( { 
+// 			url: 'https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyAguR7EAV3Opynrl0VyW38dls-4YbRyKMs&q=원피스',
 			url: 'idcheck.jsp',
 			type: 'get',
 			data: { "id" : $('input[name=id]').val() },
