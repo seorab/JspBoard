@@ -4,8 +4,8 @@
 <%@page import="java.sql.Connection"%>
 <%@page import="db.DBManager"%>
 
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <%
 	String id = request.getParameter("id");
 	String pw = request.getParameter("pw");

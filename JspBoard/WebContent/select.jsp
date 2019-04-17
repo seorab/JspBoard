@@ -3,18 +3,18 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="db.DBManager"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <%
 try {
 	DBManager db = DBManager.getInstance();
 	Connection con = db.open();
 	
-	// 3. Query ½ÇÇà ÁØºñ
+	// 3. Query ì‹¤í–‰ ì¤€ë¹„
 	String sql = "select id, name from test";
 	PreparedStatement stmt = con.prepareStatement(sql);
 	
-	// 4. Query ½ÇÇà
+	// 4. Query ì‹¤í–‰
 	ResultSet rs = stmt.executeQuery();
 	while(rs.next()) {
 		int id2 = rs.getInt("id");

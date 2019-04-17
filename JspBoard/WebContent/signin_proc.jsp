@@ -4,8 +4,8 @@
 <%@page import="java.sql.Connection"%>
 <%@page import="db.DBManager"%>
 
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <%
 	String id = request.getParameter("id");
 	String pw = request.getParameter("pw");
@@ -23,9 +23,9 @@
 			isOk = true;
 		}
 		if(isOk) {
-			out.println("·Î±×ÀÎµÇ¾ú½À´Ï´Ù.");
+			out.println("ë¡œê·¸ì¸ë˜ì—ˆìŠµë‹ˆë‹¤.");
 		} else {
-			out.println("´Ù½Ã ·Î±×ÀÎÇØÁÖ¼¼¿ä.");
+			out.println("ë‹¤ì‹œ ë¡œê·¸ì¸í•´ì£¼ì„¸ìš”.");
 		}
 	} catch (ClassNotFoundException e) {
 		e.printStackTrace();

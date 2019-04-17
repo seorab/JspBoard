@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<!-- Á¦¸ñ input text -->
-<!-- ³»¿ë textarea -->
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!-- ì œëª© input text -->
+<!-- ë‚´ìš© textarea -->
 <form method="post" action="write_proc.jsp">
-	Á¦¸ñ : <input type="text" name="title"><br>
-	³»¿ë : <textarea name="content"></textarea><br>
-	<input type="submit" value="ÀÛ¼º¿Ï·á">
+	ì œëª© : <input type="text" name="title"><br>
+	ë‚´ìš© : <textarea name="content"></textarea><br>
+	<input type="submit" value="ìž‘ì„±ì™„ë£Œ">
 </form>

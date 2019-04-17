@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <form method="post" action="signin_proc.jsp">
 	ID : <input type="text" name="id"><br>
 	PW : <input type="password" name="pw"><br>
-	<input type="submit" value="·Î±×ÀÎ">
+	<input type="submit" value="ë¡œê·¸ì¸">
 </form>
