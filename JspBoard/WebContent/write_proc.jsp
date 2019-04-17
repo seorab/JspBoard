@@ -10,6 +10,7 @@
 	request.setCharacterEncoding("utf-8");
 	String title = request.getParameter("title");
 	String content = request.getParameter("content");
+	String id = (String) session.getAttribute("id");
 	
 	try {
 		DBManager db = DBManager.getInstance();
@@ -18,7 +19,7 @@
 		PreparedStatement stmt = con.prepareStatement(sql);
 		stmt.setString(1, title);
 		stmt.setString(2, content);
-		stmt.setString(3, "a");	
+		stmt.setString(3, id);	
 		int result = stmt.executeUpdate(); // 성공이면 1 이상, 실패면 0
 		if(result > 0) {
 			out.println("작성완료");
