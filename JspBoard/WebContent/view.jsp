@@ -7,22 +7,27 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%
+	String id = request.getParameter("id");
 	try {
 		DBManager db = DBManager.getInstance();
 		Connection con = db.open();                 //  asc
-		String sql = "select * from article order by id desc";
+		String sql = "select * from article where id = ?";
 		PreparedStatement stmt = con.prepareStatement(sql);
+		stmt.setString(1, id);
+		
 		ResultSet rs = stmt.executeQuery();
-		while(rs.next()) {
-			String id = rs.getString("id");
+		if(rs.next()) {
+			String num = rs.getString("id");
 			String title = rs.getString("title");
 			String content = rs.getString("content");
 			String hit = rs.getString("hit");
 			String id2 = rs.getString("id2");
-			// 절대 경로  http://localhost/JspBoard/view.jsp?id=1
-			// 상대 경로  view.jsp?id=1
-			out.println("<a href='view.jsp?id=" + id + "'>" + id + "/" + title + "/" 
-					+ id2 + "</a><br>");
+%>
+		<h1><%=title%> / <%=num%></h1>
+		<p><%=content%></p>
+		<p><%=hit%></p>
+		<p><%=id2%></p>
+<%		
 		}
 		
 	} catch (ClassNotFoundException e) {
