@@ -11,6 +11,12 @@
 	try {
 		DBManager db = DBManager.getInstance();
 		Connection con = db.open();                 //  asc
+		
+		String sql2 = "update article set hit=hit+1 where id = ?";
+		PreparedStatement stmt2 = con.prepareStatement(sql2);
+		stmt2.setString(1, id);		
+		stmt2.executeUpdate();
+		
 		String sql = "select * from article where id = ?";
 		PreparedStatement stmt = con.prepareStatement(sql);
 		stmt.setString(1, id);
