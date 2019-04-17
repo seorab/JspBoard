@@ -28,15 +28,33 @@
 		<p><%=hit%></p>
 		<p><%=id2%></p>
 		<button type="button" onclick="location='update.jsp?id=<%=id%>'">수정</button>
+		<button type="button" onclick="del()">삭제</button>
 <%		
 		}
-		
 	} catch (ClassNotFoundException e) {
 		e.printStackTrace();
 	} catch (SQLException e) {
 		e.printStackTrace();
 	}	
 %>
+<script>
+	function del() {
+		var isOk = confirm("삭제 할래?");
+		if(isOk) { // 삭제
+			location = 'delete_proc.jsp?id=<%=id%>';
+		}
+	}
+</script>
+
+
+
+
+
+
+
+
+
+
 
 
 
