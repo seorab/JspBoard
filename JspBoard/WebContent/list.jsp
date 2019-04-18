@@ -10,7 +10,11 @@
 	String pageStr = request.getParameter("page");
 
 	int pageNum = 0;
-	pageNum = Integer.parseInt(pageStr);
+	try {
+		pageNum = Integer.parseInt(pageStr);
+	} catch(NumberFormatException e) {
+		pageNum = 1;
+	}
 
 	int startRow = 0;
 	int endRow = 0;
@@ -61,7 +65,7 @@
 		if(endPage > totalPage) endPage = totalPage;
 		
 		for(int i = startPage; i <= endPage; i++) {
-			out.println(i + " ");
+			out.println("<a href=list.jsp?page=" + i + ">" + i + "</a> ");
 		}
 		
 	} catch (ClassNotFoundException e) {
