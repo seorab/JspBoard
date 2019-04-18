@@ -43,7 +43,27 @@
 		e.printStackTrace();
 	}	
 %>
+
+댓글 <input type="text" id="comment" name="comment">
+<button type="button" onclick="writeComment()">작성</button>
+
+
+
 <script>
+	function writeComment() {
+		$.ajax({
+			url: 'write_comment.jsp',
+			type: 'post',
+			data: {
+				'comment': $('#comment').val(),
+				'id': '<%=id%>'
+			},
+			success: function(res){
+				
+			}
+		})
+	}
+
 	function del() {
 		var isOk = confirm("삭제 할래?");
 		if(isOk) { // 삭제
