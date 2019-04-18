@@ -45,17 +45,32 @@
 		PreparedStatement stmt = con.prepareStatement(sql);
 		stmt.setInt(1, startRow - 1);
 		ResultSet rs = stmt.executeQuery();
-		
+
+// 		<div class="card" style="width:400px">
+// 		  <img class="card-img-top" src="img_avatar1.png" alt="Card image">
+// 		  <div class="card-body">
+// 		    <h4 class="card-title">John Doe</h4>
+// 		    <p class="card-text">Some example text.</p>
+// 		    <a href="#" class="btn btn-primary">See Profile</a>
+// 		  </div>
+// 		</div>		
 		while(rs.next()) {
 			String id = rs.getString("id");
 			String title = rs.getString("title");
 			String content = rs.getString("content");
 			String hit = rs.getString("hit");
 			String id2 = rs.getString("id2");
-			// 절대 경로  http://localhost/JspBoard/view.jsp?id=1
-			// 상대 경로  view.jsp?id=1
-			out.println("<a href='view.jsp?id=" + id + "'>" + id + "/" + title + "/" 
-					+ id2 + "</a><br>");
+%>
+		<div class="card" style="width:400px">
+			<div class="card-body">
+ 		    <h4 class="card-title"><%=title%></h4>
+ 		    <p class="card-text"><%=content%></p>
+ 		    <a href="view.jsp?id=<%=id%>" class="btn btn-primary">
+ 		    	<%=id%>
+ 		    </a>
+ 		  </div>
+ 		</div>
+<%			
 		}
 		
 		int startPage = 0;
