@@ -1,3 +1,4 @@
+<%@page import="com.ggoreb.kakao_api.TranslateUtil"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
@@ -9,6 +10,21 @@
 	} else {
 		// 번역할 문장을 넘겨준 상태
 		out.println(query);
+		TranslateUtil util = 
+			new TranslateUtil("0a7c5408897da72ef62213f279237f86");
+		String result = util.sendText("kr", "jp", query);
+		out.println(result);
+%>
+	<script>
+		var result = '<%=result%>';
+		// alert(result);
+		result = JSON.parse(result);
+		translated_text = result.translated_text; // array
+		t2 = translated_text[0]; // array
+		var re = t2[0];
+		alert(re);
+	</script>
+<%		
 	}
 %>
 <form method="post" action="trans.jsp">
