@@ -28,9 +28,10 @@
 			String content = rs.getString("content");
 			String hit = rs.getString("hit");
 			String id2 = rs.getString("id2");
+			String link = rs.getString("link");
 %>
 		<h1><%=title%> / <%=num%></h1>
-		<p><%=content%></p>
+		<p><a href='<%=link%>'><%=content%></a></p>
 		<p><%=hit%></p>
 		<p><%=id2%></p>
 		<button type="button" onclick="location='update.jsp?id=<%=id%>'">수정</button>

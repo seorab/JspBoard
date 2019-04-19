@@ -1,3 +1,4 @@
+<%@page import="java.io.File"%>
 <%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
 <%@page import="com.oreilly.servlet.MultipartRequest"%>
 <%@page import="java.io.BufferedReader"%>
@@ -21,6 +22,15 @@ MultipartRequest mReq =
 	new MultipartRequest(
 		request, "c:/dev", 1024 * 1024 * 5, 
 		"utf-8", new DefaultFileRenamePolicy()); 
+String title = mReq.getParameter("title");
+
+// 사용자가 첨부한 파일명
+String originalFileName = mReq.getOriginalFileName("my_file");
+
+// 서버로 업로드 되면서 변경된 파일명
+File realSaveFile = mReq.getFile("my_file");
+String realSaveFileName = realSaveFile.getName();
+
 %>
 
 
